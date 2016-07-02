@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.php|uploads|files|ct|lib|assets|profile_pic|robots\.txt)
+RewriteRule ^(.*)$ /apartment/index.php/$1 [L]
+
+
