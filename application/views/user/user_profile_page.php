@@ -14,29 +14,30 @@
 
                                     <div class="">
                                         <?php foreach ($account as $key): ?>
-                                        <h2><?php   echo ucwords($key->firstname)." ".ucwords($key->lastname);?></h2>
+                                        <h2><?php  echo ucwords($key->firstname)." ".ucwords($key->lastname);?></h2>
                                         <?php endforeach ?><p>The Boarder</p>
                                     </div>
-                                    <?php if(isset($message)){ echo $message; } ?>
-                                    <?php foreach ($account as $key){ 
-                                      $firstname = $key->firstname;
-                                      $lastname = $key->lastname;
-                                      $username = $key->username;
-                                      $contact = $key->contact;
-                                      $gender = $key->gender;
-                                      $id = $key->id;
-                                      $user_type = $key->user_type;
-                                      $payment_status = $key->payment_status;
-                                                                            
-                                      $dateofreg = $key->dateofreg;
-                                      
-                                    if($this->session->userdata('id') == $id){?>
-                                         <div class="col-md-1">
-                                            <a  data-target="#<?php echo $key->id; ?>" class="btn-block btn btn-success btn-sm btn-drop btn-line" data-toggle="modal"><i class="fa fa-edit m-r-5"></i> Edit</a>
-                                        </div>
-                                                   
-                                        <?php } ?>
-                                <?php ;  ?>
+                                            
+<?php if(isset($message)){ echo $message; } ?>
+<?php foreach ($account as $key){ 
+  $firstname = $key->firstname;
+  $lastname = $key->lastname;
+  $username = $key->username;
+  $contact = $key->contact;
+  $gender = $key->gender;
+  $id = $key->id;
+  $user_type = $key->user_type;
+  $payment_status = $key->payment_status;
+
+  $dateofreg = $key->dateofreg;
+
+if($this->session->userdata('id') == $id){?>
+     <div class="col-md-1">
+        <a  data-target="#<?php echo $key->id; ?>" class="btn-block btn btn-success btn-sm btn-drop btn-line" data-toggle="modal"><i class="fa fa-edit m-r-5"></i> Edit</a>
+    </div>
+
+    <?php } ?>
+<?php ;  ?>
 
                      <div class="col-lg-10 col-md-5 col-sm-10">
                         <div class="panel rounded shadow">
